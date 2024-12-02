@@ -77,6 +77,7 @@
   </ImportGroup>
   <ItemGroup Label="WrappedTaskItems">
     <ClCompile Include="context.c" />
+    <ClCompile Include="create.c" />
     <ClCompile Include="skeleton_filter.c" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,6 +152,7 @@
     <FilesToPackage Include="$(TargetPath)" Condition="'$(ConfigurationType)'=='Driver' or '$(ConfigurationType)'=='DynamicLibrary'" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="create.h" />
     <ClInclude Include="skeleton_filter.h" />
     <ClInclude Include="context.h" />
   </ItemGroup>

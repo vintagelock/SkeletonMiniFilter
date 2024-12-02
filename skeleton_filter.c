@@ -13,6 +13,8 @@ Skeleton MiniFilter Driver
 #include "skeleton_filter.h"
 #include "context.h"
 
+#include "create.h"
+
 // Globals
 PFLT_FILTER gFilterHandle;
 ULONG_PTR   OperationStatusCtx = 1;
@@ -40,8 +42,8 @@ CONST FLT_OPERATION_REGISTRATION Callbacks[] = {
     { 
         IRP_MJ_CREATE,
         0,
-		SKEL_PreOperationPassThrough,
-		SKEL_PostOperationPassThrough
+        SKEL_PreCreate,
+		SKEL_PostCreate
     },
     { 
         IRP_MJ_CREATE_NAMED_PIPE,
