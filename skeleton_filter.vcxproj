@@ -76,9 +76,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
   <ItemGroup Label="WrappedTaskItems">
+    <ClCompile Include="cleanup.c" />
+    <ClCompile Include="close.c" />
     <ClCompile Include="context.c" />
     <ClCompile Include="create.c" />
+    <ClCompile Include="read.c" />
     <ClCompile Include="skeleton_filter.c" />
+    <ClCompile Include="write.c" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>skeleton_filter</TargetName>
@@ -152,9 +156,13 @@
     <FilesToPackage Include="$(TargetPath)" Condition="'$(ConfigurationType)'=='Driver' or '$(ConfigurationType)'=='DynamicLibrary'" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cleanup.h" />
+    <ClInclude Include="close.h" />
     <ClInclude Include="create.h" />
+    <ClInclude Include="read.h" />
     <ClInclude Include="skeleton_filter.h" />
     <ClInclude Include="context.h" />
+    <ClInclude Include="write.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="skeleton_filter.rc" />

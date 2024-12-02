@@ -28,6 +28,18 @@
     <ClCompile Include="create.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cleanup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="close.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="skeleton_filter.rc">
@@ -42,6 +54,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="create.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cleanup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="close.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="read.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="write.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

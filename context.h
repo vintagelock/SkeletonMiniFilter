@@ -14,6 +14,28 @@ typedef struct _tSKEL_INSTANCE_CONTEXT
 
 //////////////////////////////////////////////////////////////////////////
 
+typedef struct _tSKEL_STREAM_CONTEXT
+{
+	ERESOURCE	Resource;
+	ULONG		Flags;
+}SKEL_STREAM_CONTEXT, *PSKEL_STREAM_CONTEXT;
+
+#define SKEL_STREAM_CONTEXT_SIZE		sizeof( SKEL_STREAM_CONTEXT )
+#define SKEL_STREAM_CONTEXT_TAG			'sk0b'
+
+//////////////////////////////////////////////////////////////////////////
+
+typedef struct _tSKEL_STREAM_HANDLE_CONTEXT
+{
+	ERESOURCE	Resource;
+	ULONG		Flags;
+}SKEL_STREAM_HANDLE_CONTEXT, *PSKEL_STREAM_HANDLE_CONTEXT;
+
+#define SKEL_STREAM_HANDLE_CONTEXT_SIZE		sizeof( SKEL_STREAM_HANDLE_CONTEXT )
+#define SKEL_STREAM_HANDLE_CONTEXT_TAG			'sk0c'
+
+//////////////////////////////////////////////////////////////////////////
+
 FORCEINLINE VOID CtxAcquireResourceExclusive(PERESOURCE Resource)
 {
 	FLT_ASSERT(KeGetCurrentIrql() <= APC_LEVEL);

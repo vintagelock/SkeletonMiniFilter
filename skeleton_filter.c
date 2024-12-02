@@ -14,6 +14,10 @@ Skeleton MiniFilter Driver
 #include "context.h"
 
 #include "create.h"
+#include "cleanup.h"
+#include "close.h"
+#include "read.h"
+#include "write.h"
 
 // Globals
 PFLT_FILTER gFilterHandle;
@@ -54,20 +58,20 @@ CONST FLT_OPERATION_REGISTRATION Callbacks[] = {
     { 
         IRP_MJ_CLOSE,
         0,
-        SKEL_PreOperationPassThrough,
-        SKEL_PostOperationPassThrough 
+        SKEL_PreClose,
+        SKEL_PostClose
     },
     { 
         IRP_MJ_READ,
         0,
-        SKEL_PreOperationPassThrough,
-        SKEL_PostOperationPassThrough 
+        SKEL_PreRead,
+        SKEL_PostRead
     },
     { 
         IRP_MJ_WRITE,
         0,
-        SKEL_PreOperationPassThrough,
-        SKEL_PostOperationPassThrough 
+        SKEL_PreWrite,
+        SKEL_PostWrite
     },
     { 
         IRP_MJ_QUERY_INFORMATION,
@@ -139,7 +143,7 @@ CONST FLT_OPERATION_REGISTRATION Callbacks[] = {
         IRP_MJ_SHUTDOWN,
         0,
         SKEL_PreOperationNoPostOperationPassThrough,
-        NULL                                //post operations not supported
+        NULL                                // No post
     },
     { 
         IRP_MJ_LOCK_CONTROL,
@@ -150,8 +154,8 @@ CONST FLT_OPERATION_REGISTRATION Callbacks[] = {
     { 
         IRP_MJ_CLEANUP,
         0,
-        SKEL_PreOperationPassThrough,
-        SKEL_PostOperationPassThrough 
+        SKEL_PreCleanup,
+        SKEL_PostCleanup
     },
     { 
         IRP_MJ_CREATE_MAILSLOT,
@@ -288,6 +292,13 @@ CONST FLT_CONTEXT_REGISTRATION  SKEL_ContextRegistration[] = {
 	    NULL,
 	    0
     },
+
+    // Per stream context
+
+    // Per file handle context
+
+    // Per volume context
+
 };
 
 //
