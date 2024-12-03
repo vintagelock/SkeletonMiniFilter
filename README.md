@@ -1,3 +1,5 @@
+# DO NOT ACTUALLY USE THIS FOR ANYTHING :)
+
 * Skeleton Windows Mini Filter Driver
 
   Good starting point.
